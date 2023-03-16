@@ -1,0 +1,22 @@
+﻿@model MVC_Training1.Models.AddOrSubtractModels
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add or Subtract</h2>
+@using (Html.BeginForm("Result", "AddOrSubtract"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.FirstNumber)
+        @Html.TextBoxFor(m => m.FirstNumber, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.SecondNumber)
+        @Html.TextBoxFor(m => m.SecondNumber, new { @class = "form-control" })
+    </div>
+    <input type="submit" class="btn btn-primary" value="Add" name="command">
+    <input type="submit" class="btn btn-success" value="Subtract" name="command">
+}
+
+

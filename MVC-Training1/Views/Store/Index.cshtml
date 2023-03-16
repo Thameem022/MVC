@@ -1,0 +1,16 @@
+﻿@model MVC_Training1.ViewModel.StoreViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<div>
+    @using (@Html.BeginForm("view", "Store"))
+    {
+        @Html.ListBoxFor(x => x.SelectedItems, Model.StoreModels, new { @class = "list-group", size = 10 })
+        <br />
+        <button class="btn" type="submit" value="submit">Submit</button>
+    }
+</div>
