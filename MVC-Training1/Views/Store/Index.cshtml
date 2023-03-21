@@ -9,7 +9,7 @@
 <div>
     @using (@Html.BeginForm("view", "Store"))
     {
-        @Html.ListBoxFor(x => x.SelectedItems, Model.StoreModels, new { @class = "list-group", size = 10 })
+        @Html.ListBoxFor(x => x.SelectedItems, Model.StoreModels, new { @class = "list-group" })
         <br />
         <button class="btn" type="submit" value="submit">Submit</button>
     }

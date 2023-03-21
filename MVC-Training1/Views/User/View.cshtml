@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (TempData["Username"] != null)
+{
+    <h2>Username passed through cookies is</h2>
+    <ul>
+        <li>
+            @TempData["Username"]
+        </li>
+    </ul>
+}
+else
+{
+    <h2>Please try again!</h2>
+
+}
+

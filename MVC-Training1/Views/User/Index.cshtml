@@ -1,0 +1,54 @@
+﻿@model MVC_Training1.Models.User
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .field-validation-error {
+        color: red;
+    }
+
+    .input-validation-error {
+        border: 2px solid red;
+    }
+</style>
+<h2>User</h2>
+@using (@Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Name)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Address)
+        @Html.TextAreaFor(m => m.Address, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Address)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.DateOfBirth)
+        @Html.TextBoxFor(m => m.DateOfBirth, " {0: d MMM yyyy} ", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.DateOfBirth)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Nationality)
+        @Html.TextBoxFor(m => m.Nationality, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Nationality)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Country)
+        @Html.EnumDropDownListFor(model => model.Country, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Country)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.SkillSet)
+        @Html.TextAreaFor(m => m.SkillSet, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.SkillSet)
+    </div>
+    <input type="submit" id="btnWrite" formaction="@Url.Action("Submit")" value="Submit" />
+}
+@if(TempData["Message"] != null)
+            {
+                <h3>Username is:@TempData["Message"] </h3>
+            }
+

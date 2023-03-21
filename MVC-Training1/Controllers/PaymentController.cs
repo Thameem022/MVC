@@ -17,6 +17,7 @@ namespace MVC_Training1.Controllers
                 return View("AddCard", PaymentMode);
 
             }
+            ModelState.Clear();
             return View();
         }
     }
